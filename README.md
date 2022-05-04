@@ -31,13 +31,12 @@ This project was fun. I played around with CSS Grid and its placement in differe
 ### Screenshot
 
 ![Desktop](solution_images/desktop.png)
-![Hover State](solution_images/hover-states.png)
 ![Mobile](solution_images/mobile.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/Nghuynh07/3-column-preview-card-component)
-- Live Site URL: [Add live site URL here](https://6268d9933f323459f88242f7--glowing-strudel-c28f1b.netlify.app/)
+- Solution URL: [Add solution URL here](https://github.com/Nghuynh07/time_tracking_dashboard)
+- Live Site URL: [Add live site URL here](https://silver-stardust-813866.netlify.app/)
 
 ### Built with
 
