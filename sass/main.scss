@@ -1,0 +1,252 @@
+@use "bases.scss" as *;
+
+.attribution {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 5rem;
+  color: $color-light-work;
+  font-size: 1.2rem;
+  a {
+    color: $color-soft-orange-self-care;
+    opacity: 0.6;
+    letter-spacing: 0.1rem;
+  }
+}
+
+.container {
+  min-height: 100vh;
+  background-color: $color-very-dark-blue;
+  display: grid;
+  place-items: center;
+
+  .dashboard {
+    max-width: 80vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
+    grid-gap: 3rem;
+
+    &-profile {
+      grid-row: 1 / 3;
+      grid-column: 1/2;
+      background-color: $color-dark-blue;
+      border-radius: 15px;
+      overflow: hidden;
+      &-report {
+        color: $color-pale-blue;
+        font-size: clamp(1.2rem, 2.2vw, 1.4rem);
+        letter-spacing: 0.05rem;
+      }
+
+      &-heading {
+        font-size: clamp(2rem, 2.5vw, 4rem);
+        font-weight: 300;
+        color: $color-white;
+      }
+
+      &-self {
+        background-color: $color-blue;
+        border-radius: 0 0 15px 15px;
+        padding: 3rem 8rem 4rem 0;
+        display: grid;
+        justify-items: start;
+      }
+
+      &-img-wrapper {
+        max-width: 7rem;
+        min-height: 7rem;
+        border: 3px solid $color-white;
+        border-radius: 50%;
+        margin-left: 3rem;
+      }
+
+      &-img {
+        width: 100%;
+        object-fit: 1/1;
+      }
+      &-actions {
+        padding: 3rem;
+      }
+
+      &-text {
+        font-size: clamp(1.4rem, 2vw, 1.6rem);
+        color: $color-desaturated-blue;
+        cursor: pointer;
+        transition: color 0.2s;
+        &:hover {
+          color: $color-white;
+        }
+        &:nth-child(2) {
+          margin: 1.5rem 0;
+        }
+      }
+    }
+
+    .card {
+      border-radius: 15px;
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      &-wrapper {
+        background-color: $color-dark-blue;
+        min-height: 80%;
+        z-index: 100;
+        margin-top: 4rem;
+        border-radius: 15px;
+        padding: 3rem;
+        display: grid;
+        transition: background-color 0.2s;
+        cursor: pointer;
+        &:hover {
+          background-color: $color-blue;
+        }
+      }
+      &-top {
+        display: grid;
+        grid-auto-flow: column;
+        align-items: start;
+        justify-content: space-between;
+
+        img {
+          margin-top: 0.5rem;
+          transition: background-color 0.2s;
+        }
+      }
+
+      &-work {
+        font-size: clamp(1.4rem, 2vw, 1.6rem);
+        color: $color-white;
+        font-weight: 500;
+        letter-spacing: 0.05rem;
+      }
+
+      &-tracker {
+        display: grid;
+        margin-top: 2rem;
+      }
+
+      &-hours {
+        font-size: clamp(3.5rem, 4.5vw, 5rem);
+        font-weight: 300;
+        color: $color-white;
+        letter-spacing: 0.05rem;
+      }
+
+      &-previous {
+        margin-top: 0.5rem;
+        color: $color-pale-blue;
+        font-weight: 400;
+        font-size: clamp(1.2rem, 2vw, 1.4rem);
+      }
+      &-bg {
+        position: absolute;
+        right: 2rem;
+        top: -1rem;
+      }
+    }
+
+    .card-4 .card-bg {
+      top: 0;
+    }
+
+    .card-1 {
+      background-color: $color-light-work;
+    }
+    .card-2 {
+      background-color: $color-soft-play;
+    }
+    .card-3 {
+      background-color: $color-light-study;
+    }
+    .card-4 {
+      background-color: $color-lime-green-exercise;
+    }
+    .card-5 {
+      background-color: $color-violet-social;
+    }
+    .card-6 {
+      background-color: $color-soft-orange-self-care;
+    }
+  }
+
+  @media (max-width: 937px) {
+    .dashboard {
+      max-width: 90vw;
+    }
+  }
+  @media (max-width: 833px) {
+    .dashboard {
+      max-width: 100vw;
+      margin-inline: 2rem;
+    }
+  }
+  @media (max-width: 800px) {
+    .attribution {
+      display: none;
+    }
+    .container {
+      padding: 7rem 0 0 5rem;
+    }
+    .dashboard {
+      margin: 5rem 0;
+      grid-template-columns: repeat(2, 1fr);
+      .card {
+        &-hours {
+          font-size: clamp(2.5rem, 2.5vw, 5rem);
+        }
+      }
+    }
+  }
+  @media (max-width: 650px) {
+    .container {
+    }
+    .dashboard {
+      grid-template-columns: 1fr;
+
+      &-profile {
+        &-img-wrapper {
+          max-width: 5rem;
+          min-height: 5rem;
+        }
+        &-actions {
+          display: grid;
+          grid-auto-flow: column;
+          justify-content: space-between;
+          padding: 2rem;
+        }
+        &-text {
+          &:nth-child(2) {
+            margin: 0 1.5rem;
+          }
+        }
+        &-self {
+          grid-auto-flow: column;
+          place-items: center;
+
+          padding: 0;
+        }
+
+        .jeremy-report {
+          display: grid;
+          grid-auto-flow: row;
+        }
+      }
+
+      .card {
+        max-height: fit-content;
+        &-tracker {
+          grid-auto-flow: column;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 800px) {
+  .attribution {
+    display: none;
+  }
+}
